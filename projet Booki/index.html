@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booki</title>
+    <link rel="stylesheet" href="style.css">
+    <!--police Releway du contenu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!--icon-->
+
+</head>
+
+<body>
+    <div id="bloc_page">
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="images/logo/Booki@3x.png" alt="logo_heberge_activite">
+                </a>
+            </div>
+            <nav class="lien">
+                <div class="lien_element active_lien">
+                    <div class="ligne_dessus"></div>
+                    <a href="#hebergements" class="element">Hébergements</a>
+                </div>
+                <div class="lien_element">
+                    <div class="ligne_dessus"></div>
+                    <a href="#activites" class="element">Activités</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="recherche_filtres">
+                <h1> Trouvez votre hébergement pour des vacances de reve </h1>
+                <p> En plein centre ville ou pleine nature </p>
+        <!--Barre de recherche-->
+                <form class="recherche">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="recherche_icon">
+                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z" />
+                    </svg>
+                    <i class="fa-solid fa-location-dot" id="icon_localisation"></i>
+                    <input type="text" name="recherche" id="recherche_texte" value="Marseille, France" placeholder="Marseille">
+                    <input type="submit" value="Rechercher" id="rechercher_bouton">
+                    <i id="recherche_loupe" class="fas fa search">loupe</i>
+                </form>
+        <!--Filtres-->
+                <div class="filtres">
+                    <ul>
+                        <li id="filtres_titre"> Filtres </li>
+                        <li class="filtres_elements">
+                            <span class="icon_filtre">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <path
+                                        d="M0 112.5V422.3c0 18 10.1 35 27 41.3c87 32.5 174 10.3 261-11.9c79.8-20.3 159.6-40.7 239.3-18.9c23 6.3 48.7-9.5 48.7-33.4V89.7c0-18-10.1-35-27-41.3C462 15.9 375 38.1 288 60.3C208.2 80.6 128.4 100.9 48.7 79.1C25.6 72.8 0 88.6 0 112.5zM288 352c-44.2 0-80-43-80-96s35.8-96 80-96s80 43 80 96s-35.8 96-80 96zM64 352c35.3 0 64 28.7 64 64H64V352zm64-208c0 35.3-28.7 64-64 64V144h64zM512 304v64H448c0-35.3 28.7-64 64-64zM448 96h64v64c-35.3 0-64-28.7-64-64z" />
+                                </svg>
+                                <i class="fa-solid fa-money-bill-wave" id="icon_economie"></i>
+                            </span>
+                            <p>Economique</p>
+                        </li>
+                        <li class="filtres_elements">
+                            <span class="icon_filtre">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <path
+                                        d="M208 48c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM152 352V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z" />
+                                </svg>
+                                <i class="fa-solid fa-person"></i>
+                            </span>
+                            <p>Familial</p>
+                        </li>
+                        <li class="filtres_elements">
+                            <span class="icon_filtre">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <path
+                                        d="M64 288L39.8 263.8C14.3 238.3 0 203.8 0 167.8C0 92.8 60.8 32 135.8 32c36 0 70.5 14.3 96 39.8L256 96l24.2-24.2c25.5-25.5 60-39.8 96-39.8C451.2 32 512 92.8 512 167.8c0 36-14.3 70.5-39.8 96L448 288 256 480 64 288z" />
+                                </svg>
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <p>Romantique</p>
+                        </li>
+                        <li class="filtres_elements">
+                            <span class="icon_filtre">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <path
+                                        d="M309.6 158.5L332.7 19.8C334.6 8.4 344.5 0 356.1 0c7.5 0 14.5 3.5 19 9.5L392 32h52.1c12.7 0 24.9 5.1 33.9 14.1L496 64h56c13.3 0 24 10.7 24 24v24c0 44.2-35.8 80-80 80H464 448 426.7l-5.1 30.5-112-64zM416 256.1L416 480c0 17.7-14.3 32-32 32H352c-17.7 0-32-14.3-32-32V364.8c-24 12.3-51.2 19.2-80 19.2s-56-6.9-80-19.2V480c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V249.8c-28.8-10.9-51.4-35.3-59.2-66.5L1 167.8c-4.3-17.1 6.1-34.5 23.3-38.8s34.5 6.1 38.8 23.3l3.9 15.5C70.5 182 83.3 192 98 192h30 16H303.8L416 256.1zM464 80c0-8.8-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16s16-7.2 16-16z" />
+                                </svg>
+                                <i class="fa-solid fa-dog"></i>
+                            </span>
+                            <p>Animaux autorisés</p>
+                        </li>
+                    </ul>
+                </div>
+    <!--information-->
+                <div id="information">
+
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z" />
+                        </svg>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <p>Plus de 500 logements sont disponible dans cette ville</p>
+
+                </div>
+            </section>
+
+    <!--section hebergement et popularite-->
+
+            <section class="hebergements_populaires">
+
+    <!--section hebergements-->
+
+                <section class="section_hebergements" id="hebergements">
+
+                    <h2>Hébergements à Marseille</h2>
+
+                    <div class="hebergements">
+
+                        <article class="hebergements_article">
+                            <a href="#">
+                                
+                            <img src="images/hebergements/4_small/auberge_la_cannebiere.jpg"
+                                alt="Hébergements dans une cannebiere" class="img_hebergements">
+                            <h3>Auberge la cannebière</h3>
+                            <p>Nuit à partir de <strong> 25£ </strong> </p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <!--Etoile de couleur non bleu mais grise-->
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+                                </span>
+
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a>
+                        </article>
+
+                        <article class="hebergements_article">
+                         <a href="#">
+                            <img src="images/hebergements/4_small/hotel_du_port.jpg"
+                                alt="Hébergements dans un hotel au port" class="img_hebergements">
+                            <h3>Hotel du port</h3>
+                            <p>Nuit à partir de 52 <strong> £ </strong> </p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a>
+                        </article>
+
+                        <article class="hebergements_article">
+                          <a href="#">
+                            <img src="images/hebergements/4_small/hotel_les_mouettes.jpg"
+                                alt="Hébergements dans un hotel au port" class="img_hebergements">
+                            <h3>Hotel les mouettes</h3>
+                            <p>Nuit à partir de 76<strong> £ </strong></p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+                                </span>
+
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a>
+                        </article>
+
+                        <article class="hebergements_article">
+                          <a href="#">
+                            <img src="images/hebergements/4_small/hotel_de_la_mer.jpg"
+                                alt="Hébergements dans un hotel au port" class="img_hebergements">
+                            <h3>Hotel de la mer</h3>
+                            <p>Nuit à partir de 46<strong> £ </strong></p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+                                </span>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a>
+                        </article>
+
+                        <article class="hebergements_article">
+                         <a href="#">
+                            <img src="images/hebergements/4_small/auberge_le_panier.jpg"
+                                alt="Hébergements dans un hotel au port" class="img_hebergements">
+                            <h3>Auberge le Panier</h3>
+                            <p>Nuit à partir de <strong> 23£ </strong></p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+
+                                </span>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a> 
+                        </article>
+
+                        <article class="hebergements_article">
+                          <a href="#">
+                            <img src="images/hebergements/4_small/hotel_chez_amina.jpg"
+                                alt="Hébergements dans un hotel au port" class="img_hebergements">
+                            <h3>Hotel chez Amina</h3>
+                            <p>Nuit à partir de 96 <strong>£</strong></p>
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+                          </a>
+                        </article>
+                    </div>
+
+                    <p id="afficher_plus">
+                        <a href="#">
+                            Afficher plus
+                        </a>
+                    </p>
+
+                </section>
+
+                <!--section populaires-->
+
+                <section class="populaires">
+
+                    <div class="populaires_titre">
+                        <h2>Les plus populaires</h2>
+                        <span class="populaires_titre_icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <defs>
+                                    <style>
+                                        .fa-secondary {
+                                            opacity: .4
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="fa-secondary"
+                                    d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                            </svg>
+                            <i class="fa-regular fa-star"></i>
+
+                        </span>
+                    </div>
+
+                    <article class="populaires_article">
+                     <a href="#">
+                        <img src="images/hebergements/4_small/hotel_le_soleil_du_matin.jpg"
+                            alt="Hotel le soleil du matin" class="img_populaires">
+                        <div>
+                            <h3>Hotel le soleil du matin</h3>
+                            <p>Nuit à partir de 128<strong>£</strong></p>
+
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+
+                        </div>
+                     </a>
+                    </article>
+
+                    <article class="populaires_article">
+                        <a href="#">
+                        <img src="images/hebergements/4_small/au_coeur_de_leau_chambre_dhote.jpg"
+                            alt="Hotel le soleil du matin" class="img_populaires">
+                        <div>
+                            <h3>Au coeur de l'eau Chambres d'hotes</h3>
+                            <p>Nuit à partir de 71<strong>£</strong></p>
+
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+
+                                </span>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+
+                        </div>
+                    </a>
+                    </article>
+
+                    <article class="populaires_article">
+                        <a href="#">
+                        <img src="images/hebergements/1_xlarge/hotel_tout_bleu_tout_blanc.jpg" id="tout_bleu"
+                            alt="Hotel tout bleu et blanc" class="img_populaires">
+                        <div>
+                            <h3>Hotel tout bleu et tout Blanc</h3>
+                            <p>Nuit à partir de 68<strong>£</strong></p>
+
+                            <div class="etoiles">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <defs>
+                                        <style>
+                                            .fa-secondary {
+                                                opacity: .4
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path class="fa-secondary"
+                                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                </svg>
+                                <span class="etoile_grise">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <defs>
+                                            <style>
+                                                .fa-secondary {
+                                                    opacity: .4
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path class="fa-secondary"
+                                            d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                                    </svg>
+
+                                </span>
+                                <i class="fa-regular fa-star"></i>
+
+                            </div>
+
+                        </div>
+                    </a>
+                    </article>
+
+                </section>
+            </section>
+
+    <!-- la grande section ACTIVITES  -->
+
+            <section class="section_activites" id="activites">
+                <h2> Activités à Marseille </h2>
+
+                <div class="activites">
+                    <article class="activites_article">
+                            <div class="seul">
+                                <a href="#">
+                                    <img src="images/activites/4_small/vieux_port.jpg" alt="Vieux port"
+                                    class="img_activites_haut">
+                                    <h3> Vieux port </h3>
+                                </a>
+                            </div>
+                    </article>
+
+                    <article class="activites_article">
+                        
+                        <div class="activites_article_dessus">
+                            <a href="#">
+                                <img src="images/activites/4_small/Fort_de_pomègues.jpg" alt=" Fort de Pomègues"
+                                class="img_activites">
+                                <h3>Fort de Pomègues</h3>
+                            </a>
+                        </div>
+
+                        <div class="activites_article_dessous">
+                            <a href="#">
+                                <img src="images/activites/4_small/ile_du_Frioul.jpg" alt=" Ile du Frioul"
+                                class="img_activites">
+                            <h3>Ile du Frioul</h3>
+                            </a>
+                        </div>
+
+                    </article>
+
+                    <article class="activites_article">
+                        <div class="seul">
+                            <a href="#">
+                                <img src="images/activites/4_small/parc_national_des_calanques.jpg"
+                                alt="parc National des Calanques" class="img_activites_haut" id="img_activites_haut">
+                                <h3> parc National des Calanques </h3>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="activites_article">
+                        <div class="activites_article_dessus_end">
+                            <a href="#">
+                                <img src="images/activites/4_small/notre_dame_de_la_garde.jpg" alt=" Notre-Dame-de-la-Garde"
+                                class="img_activites">
+                                <h3>Notre-Dame-de-la-Garde</h3>
+                            </a>
+                        </div>
+
+                        <div class="activites_article_dessous_end">
+                            <a href="#">
+                                <img src="images/activites/4_small/parc_longchamp.jpg" alt=" Parc Longchamp"
+                                class="img_activites">
+                                <h3>Parc Longchamp</h3>
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+          <!-- FOOTER........................................................................................... -->
+
+        <footer>
+            <div class="footer_champs">
+                <a href="#">
+                    <h4>A propos</h4>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">Fonctionnement du site</a>
+                    </li>
+                    <li>
+                        <a href="#">Condition générales de vente</a>
+                    </li>
+                    <li>
+                        <a href="#">Données et confidentialité</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_champs">
+                <a href="#">
+                    <h4>Nos hébergements</h4>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">Charte qualité </a>
+                    </li>
+                    <li>
+                        <a href="#">soumettre votre hotel</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_champs">
+                <a href="#">
+                    <h4>Assistance</h4>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">Centre d'aide</a>
+                    </li>
+                    <li>
+                        <a href="#">Nous contacter</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
